@@ -3,6 +3,17 @@ import requests
 
 ternopil_station_id = '610100'
 
+def get_stations():
+  url = 'http://bus.com.ua/cgi-bin/tablo.pl'
+    
+  response = requests.get(url)
+  html = response.text
+  soup = BeautifulSoup(html, 'html.parser')
+
+  #to be continued
+
+
+
 def get_routes_by_station_id(station_id = ternopil_station_id):
   url = 'http://bus.com.ua/cgi-bin/tablo.pl?as=' + station_id
 
